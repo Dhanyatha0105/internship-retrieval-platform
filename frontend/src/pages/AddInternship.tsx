@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createInternship } from '../api';
-import type { Internship } from '../api';
 import Navbar from '../components/Navbar';
 import { 
   Send, AlertCircle, Building, MapPin, 
@@ -14,7 +13,6 @@ const AddInternship = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
   const [showAnalysis, setShowAnalysis] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<any>(null);
   const [form, setForm] = useState({
@@ -33,7 +31,6 @@ const AddInternship = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    setSuccess('');
     setLoading(true);
     setShowAnalysis(true);
     setAnalysisResult(null);
@@ -56,10 +53,6 @@ const AddInternship = () => {
         report: parsedReport
       });
 
-      if (!result.is_scam) {
-        setSuccess('Internship posted successfully!');
-      }
-      
       // Don't clear form yet, let user see results
     } catch {
       setError('Failed to post internship. Please try again.');

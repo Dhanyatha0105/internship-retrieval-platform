@@ -1,5 +1,7 @@
 # Internship Retrieval Platform
 
+**Live demo:** https://internship-retrieval-platform.vercel.app — _Demo: frontend only with bundled sample listings &amp; scam scores (no live backend). Login accepts any details._
+
 A full-stack platform for finding internships with scam detection and smart ranking.
 
 ## Quick Start
