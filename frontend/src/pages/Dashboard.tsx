@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import SearchBar from '../components/SearchBar';
 import InternshipCard from '../components/InternshipCard';
 import Navbar from '../components/Navbar';
-import { fetchInternships, searchInternships, DEMO_MODE } from '../api';
+import { fetchInternships, searchInternships } from '../api';
 import type { Internship } from '../api';
 import { Loader, AlertCircle, Briefcase, ShieldAlert, CheckCircle2 } from 'lucide-react';
 
@@ -69,11 +69,6 @@ const Dashboard = () => {
             Browse <span className="gradient-text">Internships</span>
           </h1>
           <p className="text-gray-500 mt-1">Discover verified opportunities from top companies</p>
-          {DEMO_MODE && (
-            <div className="mt-3 inline-block rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-medium text-amber-300">
-              Demo — sample listings &amp; scam scores (no live backend). Login accepts any details.
-            </div>
-          )}
         </div>
 
         {/* Search */}
